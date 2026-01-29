@@ -46,7 +46,7 @@ pub fn args_scan() -> ScanArgs {
         fuzz_workers,
         verbose,
     ) = match Opts::from_args() {
-        Opts::SCAN(url_opts) => {
+        Opts::Scan(url_opts) => {
             // setup logger
             let req_opts = RequestOpts {
                 headers: url_opts.headers,

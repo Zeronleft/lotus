@@ -32,7 +32,7 @@ use structopt::StructOpt;
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    if let Opts::NEW(new_opts) = Opts::from_args() {
+    if let Opts::New(new_opts) = Opts::from_args() {
         new_args(new_opts.scan_type, new_opts.file_name);
         std::process::exit(0);
     }

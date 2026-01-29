@@ -1,5 +1,5 @@
 use crate::cli::input::parse_requests::FullRequest;
-use crate::lua::runtime::{encode_ext::EncodeEXT, http_ext::HTTPEXT, utils_ext::UtilsEXT};
+use crate::lua::runtime::{encode_ext::EncodeEXT, http_ext::HTTPEXT, osint_ext::OsintEXT, secrets_ext::SecretsEXT, utils_ext::UtilsEXT};
 use crate::utils::bar::GLOBAL_PROGRESS_BAR;
 use crate::{
     lua::{
@@ -60,6 +60,8 @@ impl LuaLoader {
         lua_eng.add_printfunc();
         lua_eng.add_matchingfunc();
         lua_eng.add_threadsfunc();
+        lua_eng.add_osint_funcs();
+        lua_eng.add_secrets_funcs();
         set_global_value!(
             lua,
             "ERR_STRING",

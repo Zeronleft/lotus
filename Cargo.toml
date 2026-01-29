@@ -63,12 +63,21 @@ urlencoding = "2.1"
 # Random
 rand = "0.8"
 
+# Directories
+dirs-next = "2.0"
+
+# Pin crates to avoid rustc version issues (transitive deps)
+time = "=0.3.36"
+base64ct = "=1.6.0"
+password-hash = "=0.4.2"
+idna = "=0.5.0"
+
 # HTTP & URLS
 serde_json = "1.0.85"
 serde_urlencoded = "0.7.1"
 serde = { version = "1.0.144", features = ["derive"] }
 reqwest = { version = "0.11.12", features = ["multipart"] }
-url = "2.2.2"
+url = "=2.5.0"
 colored = "2.1.0"
 
 [profile.release]
